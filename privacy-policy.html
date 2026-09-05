@@ -91,35 +91,38 @@
     <div class="header">
       <div class="badge">Stages Official Privacy Notice</div>
       <h1>Privacy Policy for Stages</h1>
-      <p class="updated">Last updated: September 2, 2026</p>
+      <p class="updated">Last updated: September 6, 2026</p>
     </div>
 
     <h2>1. Introduction</h2>
     <p>This Privacy Policy explains how <strong>Stages</strong> ("we", "our", or "the app") handles user information. We are committed to protecting your privacy and ensuring a transparent, enjoyable card gaming experience.</p>
 
-    <h2>2. Information We Do NOT Collect</h2>
+    <h2>2. Information We Collect & Device Permissions</h2>
     <p>Stages is designed to operate with minimal data access:</p>
     <ul>
       <li><strong>No Personal Accounts:</strong> You do not need to register, log in, or provide an email address, phone number, or password.</li>
       <li><strong>No Identity Tracking:</strong> We do not track, profile, or sell your personal information or device IDs.</li>
-      <li><strong>No Location or Sensor Data:</strong> The app does not access your GPS location, microphone, camera, contacts, or photo library.</li>
+      <li><strong>Microphone Permission (Optional):</strong> The app requests microphone access solely to enable optional, real-time voice chat with other players during multiplayer games ("Play with Friends" and "Play Online"). Audio is transmitted in real time and is never recorded, stored, or uploaded to permanent servers.</li>
+      <li><strong>No Location, Contacts, or Photos:</strong> The app does not access your GPS location, camera, contacts, or photo library.</li>
     </ul>
 
-    <h2>3. Multiplayer Rooms & Peer-to-Peer Networking</h2>
+    <h2>3. Multiplayer Rooms, Live Voice Chat & Peer-to-Peer Networking</h2>
     <p>When you play in a Multiplayer Room:</p>
     <ul>
-      <li>Multiplayer rooms use direct peer-to-peer (WebRTC) connections via PeerJS.</li>
-      <li>Game actions (card draws, card lays, discards, and room codes) are exchanged directly between connected players.</li>
-      <li>No gameplay data, chat, or voice communications are recorded, stored, or processed on permanent external databases.</li>
+      <li>Multiplayer rooms use direct peer-to-peer (WebRTC) encrypted connections via PeerJS.</li>
+      <li>Game actions (card draws, card lays, discards, and room codes) and real-time voice audio are exchanged directly between connected players.</li>
+      <li>Voice audio is strictly ephemeral in transit: it is processed only in active device memory during live speech and is discarded immediately. No voice recordings or gameplay logs are retained on external servers.</li>
+      <li>Players maintain full control and can mute their microphone or speaker at any time using in-game controls.</li>
     </ul>
 
     <h2>4. Device Storage & Local Preferences</h2>
     <p>The app may use local device storage (e.g., standard browser LocalStorage or app cache) solely to preserve your in-game preferences, such as your chosen player nickname, audio mute toggle, card animation speed, and selected visual theme. This information stays on your device and is never transmitted to third parties.</p>
 
-    <h2>5. Third-Party Services & Network Permissions</h2>
+    <h2>5. Third-Party Services & Android Permissions</h2>
     <p>The app requests the following Android permissions:</p>
     <ul>
-      <li><strong>INTERNET / ACCESS_NETWORK_STATE:</strong> Required exclusively to allow WebRTC peer connections for Multiplayer Room games. Offline games against computer bots and Pass & Play do not transmit network data.</li>
+      <li><strong>INTERNET / ACCESS_NETWORK_STATE / ACCESS_WIFI_STATE:</strong> Required to allow WebRTC peer connections for Multiplayer Room games. Offline games against computer bots and Pass & Play do not transmit network data.</li>
+      <li><strong>RECORD_AUDIO / MODIFY_AUDIO_SETTINGS:</strong> Used exclusively for the optional in-game live voice chat feature during multiplayer room matches.</li>
     </ul>
 
     <h2>6. Children's Privacy</h2>
