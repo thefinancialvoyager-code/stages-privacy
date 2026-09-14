@@ -1,2 +1,2 @@
 # stages-privacy
-Official Privacy Policy for Stages Card Game
+Official Privacy Policy for Stages
