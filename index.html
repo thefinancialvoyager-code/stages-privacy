@@ -102,65 +102,36 @@
     <div class="header">
       <div class="badge">Stages Official Privacy & Data Notice</div>
       <h1>Privacy Policy & Account Deletion</h1>
-      <p class="updated">Last updated: September 2026 &bull; Application: Stages Card Game</p>
+      <p class="updated">Last updated: October 2026 &bull; Application: Stages Card Game</p>
     </div>
 
     <h2>1. Introduction</h2>
-    <p>This Privacy Policy applies to the mobile application <strong>Stages</strong> (also referred to as "Stages Card Game"). We are committed to player privacy and ensuring players have complete transparency and control over their accounts and data.</p>
+    <p>This Privacy Policy applies to the mobile application <strong>Stages</strong> (also referred to as "Stages Card Game"). It explains the device-local player profile, multiplayer connections, and the controls available for local data.</p>
 
-    <h2>2. User Accounts & Data We Collect</h2>
-    <p>Stages provides flexible gameplay options:</p>
+    <h2>2. Device-Local Player Profiles</h2>
     <ul>
-      <li><strong>Guest Play (No Account Required):</strong> You can enjoy single-player matches and join multiplayer tables instantly as a Guest without registration or providing any credentials.</li>
-      <li><strong>Optional Email & Password Account:</strong> If you choose to register an account to preserve player stats, level, and friend lists across sessions, we collect:
-        <ul>
-          <li><strong>Email Address:</strong> Used strictly as your account login identifier.</li>
-          <li><strong>Password:</strong> Passwords are cryptographically salted and hashed using SHA-256 before storage; plain-text passwords are never stored or transmitted in plain text.</li>
-          <li><strong>Player Display Name:</strong> A custom nickname chosen by you for display on leaderboards and in-game tables.</li>
-          <li><strong>Friend Code:</strong> A randomly assigned unique identifier (e.g., STG-XXXX) to let friends invite each other to private tables.</li>
-        </ul>
-      </li>
-      <li><strong>Optional Google Play Games:</strong> Players can connect with their public GamerTag for player recognition.</li>
-      <li><strong>No Personal Tracking:</strong> We do not collect GPS location, contacts, device IMEI, or browsing activity.</li>
+      <li><strong>No Stages online account:</strong> Stages does not offer email registration, password login, cloud profiles, or a hosted account database.</li>
+      <li><strong>Local profile data:</strong> Your display name, avatar, friend code, game statistics, and preferences are stored in the app data on your device.</li>
+      <li><strong>Shared with players in your room:</strong> When you host or join a "With Friends" room, your display name, avatar, and friend code are sent to the other players in that room so they can see who is playing. They are not sent to the developer.</li>
+      <li><strong>Manual profile transfer:</strong> A transfer code can contain your local profile, statistics, and friends. The code has a corruption check but is not encrypted, so treat it as private.</li>
+      <li><strong>No personal tracking:</strong> We do not collect GPS location, contacts, device IMEI, or browsing activity.</li>
     </ul>
 
-    <h2>3. Real-Time Peer-to-Peer Voice Chat & Networking</h2>
-    <p>Multiplayer tables utilize encrypted WebRTC peer-to-peer data channels. Optional voice chat is strictly opt-in: audio is transmitted ephemerally in real time and is never recorded, uploaded to permanent storage, or shared with third parties.</p>
+    <h2>3. Real-Time Peer-to-Peer Multiplayer Networking</h2>
+    <p>"With Friends" private rooms use encrypted WebRTC peer-to-peer data channels strictly for card game state synchronization. There are no public tables or matchmaking with strangers: players can only join a room by entering its 4-letter code. Stages does not use the microphone or camera and does not record or stream audio.</p>
+    <p>To connect devices, Stages uses third-party networking services: the public PeerJS signaling server (0.peerjs.com) and STUN servers operated by Google (stun.l.google.com) and Cloudflare (stun.cloudflare.com). These services receive your device's IP address and temporary connection identifiers while a room is open. They do not receive your cards, statistics, or friends list.</p>
 
     <div id="delete-account" class="callout">
-      <h3 style="color: #fef08a;">4. Account and Data Deletion Policy</h3>
-      <p>In full compliance with Google Play's Account Deletion Policy, users have the right to request deletion of their account and all associated data at any time.</p>
-      
-      <h4 style="color: #fbbf24; margin: 12px 0 6px;">Option A: In-App Account Deletion (Instant)</h4>
-      <ol>
-        <li>Open the <strong>Stages</strong> app on your device.</li>
-        <li>From the main lobby or in-game top bar, tap the <strong>Player Profile / Sign In</strong> button.</li>
-        <li>Tap <strong>"Delete Acct"</strong> (or <strong>"Clear Data"</strong>).</li>
-        <li>Confirm the prompt.</li>
-      </ol>
-      <p><em>Outcome:</em> Your account credentials, email, password hash, match statistics, rankings, and friend connections are immediately and permanently erased.</p>
-
-      <h4 style="color: #fbbf24; margin: 12px 0 6px;">Option B: Web / Email Deletion Request (If App is Uninstalled)</h4>
-      <p>If you have uninstalled the app or no longer have access to your device, you can submit a deletion request via email:</p>
-      <ul>
-        <li>Send an email to: <a href="mailto:thefinancialvoyager@gmail.com?subject=Account%20Deletion%20Request%20-%20Stages">thefinancialvoyager@gmail.com</a></li>
-        <li>Subject Line: <strong>Account Deletion Request - Stages</strong></li>
-        <li>Include your registered email address or player friend code (STG-XXXX).</li>
-      </ul>
-      <p><em>Timeline:</em> Deletion requests received by email are verified and completely purged within 48 business hours.</p>
-      
-      <h4 style="color: #fbbf24; margin: 12px 0 6px;">What Data is Deleted vs. Retained:</h4>
-      <ul>
-        <li><strong>Deleted:</strong> Email address, hashed password, username, friends list, stats, and match records.</li>
-        <li><strong>Retained:</strong> None. No user data is retained after deletion.</li>
-      </ul>
+      <h3 style="color: #fef08a;">4. Clearing Local Profile Data</h3>
+      <p>Open <strong>Privacy</strong> from the main menu and tap <strong>Clear Local Data</strong> to remove your profile and statistics from this device.</p>
+      <p>Because Stages has no hosted account database, there is no server-side Stages account to delete and the developer cannot remotely recover or erase data stored only on your device.</p>
     </div>
 
-    <h2>5. Security & Encryption</h2>
-    <p>All communication with backend services is encrypted in transit using industry-standard HTTPS and secure WebSocket (WSS) protocols.</p>
+    <h2>5. Security & Networking</h2>
+    <p>Multiplayer game state synchronizes using encrypted WebRTC data connections. A signaling service helps peers connect but is not a Stages account or profile service.</p>
 
     <h2>6. Children's Privacy</h2>
-    <p>Stages complies with COPPA and Google Play Families policies. We do not knowingly collect personal information from children under 13. Real-time peer-to-peer voice chat is strictly age-gated and restricted to players aged 13 and older.</p>
+    <p>Stages complies with COPPA and Google Play Families policies. We do not knowingly collect personal information from children under 13.</p>
 
     <h2>7. Developer Contact</h2>
     <p>For any questions or data inquiries regarding Stages, please contact us at: <a href="mailto:thefinancialvoyager@gmail.com">thefinancialvoyager@gmail.com</a>.</p>
