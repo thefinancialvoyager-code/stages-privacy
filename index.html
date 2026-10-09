@@ -200,6 +200,7 @@
       <h2>5. Real-Time Peer-to-Peer Multiplayer Networking</h2>
       <p>"With Friends" private rooms use encrypted WebRTC peer-to-peer connections to keep the card game in sync and, if you choose, for voice chat (section 6). There are no public tables or matchmaking with strangers: players can only join a room by entering its 4-letter code.</p>
       <p>To connect devices, Stages uses third-party networking services: the public PeerJS signaling server (0.peerjs.com) and STUN servers operated by Google (stun.l.google.com) and Cloudflare (stun.cloudflare.com). These services receive your device's IP address and temporary connection identifiers while a room is open. They do not receive your cards, statistics, or voice.</p>
+      <p><strong>Joining with a QR code:</strong> the host's QR code links to a page on this website (thefinancialvoyager-code.github.io), which is hosted by GitHub Pages. When a friend opens it, GitHub receives their IP address and browser details, as with any website. The page stores nothing; its button only passes the 4-letter room code to Stages on that phone. Stages itself does not use the camera: the friend scans the code with their phone's own camera app.</p>
     </section>
 
     <section>

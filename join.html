@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3ead9">
+  <meta name="robots" content="noindex">
+  <title>Join a Stages game</title>
+  <style>
+    /* Opened by scanning a host's QR code in Stages. Loads nothing from other sites. */
+    @font-face {
+      font-family: 'Fredoka';
+      src: url('fonts/fredoka.woff2') format('woff2');
+      font-weight: 300 700;
+      font-display: swap;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Fredoka', 'Nunito', 'Varela Round', 'Trebuchet MS', system-ui, sans-serif;
+      background: radial-gradient(ellipse at 50% 0%, #fbf3e4, #efe2c9 70%) fixed, #f3ead9;
+      color: #6b3c18;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 16px;
+    }
+    .card {
+      width: 100%;
+      max-width: 460px;
+      padding: 26px 22px 24px;
+      border-radius: 28px;
+      text-align: center;
+      background: linear-gradient(180deg, #fffaf0, #f8e8c8);
+      box-shadow: 0 6px 0 #c8955a, 0 14px 26px rgba(90,45,15,.18);
+    }
+    h1 { color: #5a3013; font-size: 26px; line-height: 1.2; margin-bottom: 6px; }
+    p { font-size: 16px; line-height: 1.5; margin: 10px 0; }
+    .code { display: flex; gap: 10px; justify-content: center; margin: 18px 0 8px; }
+    .code span {
+      width: 58px; height: 70px; border-radius: 14px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 38px; font-weight: 700; color: #5a3013;
+      background: #fff; box-shadow: inset 0 -4px 0 #ead3a6, 0 4px 0 #a06a3a;
+    }
+    .open {
+      display: block;
+      margin: 20px 0 10px;
+      padding: 0 20px;
+      min-height: 64px;
+      line-height: 64px;
+      border-radius: 32px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      text-shadow: 0 2px 0 #1f5a22;
+      background: linear-gradient(180deg, #327534, #2e7d32);
+      box-shadow: inset 0 3px 0 rgba(255,255,255,.25), 0 6px 0 #1f5a22;
+    }
+    .open:active { transform: translateY(4px); box-shadow: 0 2px 0 #1f5a22; }
+    .small { font-size: 14px; color: #8a6a4a; }
+    a { color: #b0521a; font-weight: 600; }
+    .bad h1 { color: #8a2216; }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h1 id="title">Join a Stages game</h1>
+    <div class="code" id="code" aria-label="Room code"></div>
+    <p id="lead">Your friend is hosting a game of Stages.</p>
+    <a class="open" id="open" href="#">Open Stages</a>
+    <p class="small" id="manual"></p>
+    <p class="small">Don't have Stages? <a id="store" href="https://play.google.com/store/apps/details?id=com.stages.app">Get it on Google Play</a></p>
+  </div>
+  <script>
+    (function () {
+      var PLAY = 'https://play.google.com/store/apps/details?id=com.stages.app';
+      // Room codes are 4 characters without 0, O, 1 or I (same rule as the app).
+      var raw = (new URLSearchParams(location.search).get('room') || '').toUpperCase();
+      var valid = /^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{4}$/.test(raw);
+      var card = document.getElementById('card');
+      var open = document.getElementById('open');
+      if (!valid) {
+        card.className = 'card bad';
+        document.getElementById('title').textContent = 'This join link is not valid';
+        document.getElementById('lead').textContent = 'Ask your friend to show the QR code again, or type their 4-letter room code in Stages under With Friends.';
+        open.style.display = 'none';
+        return;
+      }
+      var codeBox = document.getElementById('code');
+      raw.split('').forEach(function (ch) {
+        var s = document.createElement('span');
+        s.textContent = ch;
+        codeBox.appendChild(s);
+      });
+      document.getElementById('manual').textContent =
+        'If the button does nothing, open Stages, tap With Friends and enter ' + raw + '.';
+      var isAndroid = /Android/i.test(navigator.userAgent);
+      if (isAndroid) {
+        // Opens Stages (stages://join/CODE); if it isn't installed, Android shows Google Play.
+        open.href = 'intent://join/' + raw + '#Intent;scheme=stages;package=com.stages.app;S.browser_fallback_url=' +
+          encodeURIComponent(PLAY) + ';end';
+      } else {
+        open.style.display = 'none';
+        document.getElementById('lead').textContent =
+          'Stages runs on Android phones. Open Stages there, tap With Friends and enter this code.';
+      }
+    })();
+  </script>
+</body>
+</html>
