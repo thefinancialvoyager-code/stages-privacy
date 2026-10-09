@@ -106,34 +106,60 @@
     </div>
 
     <h2>1. Introduction</h2>
-    <p>This Privacy Policy applies to the mobile application <strong>Stages</strong> (also referred to as "Stages Card Game"). It explains the device-local player profile, multiplayer connections, and the controls available for local data.</p>
+    <p>This Privacy Policy applies to the mobile application <strong>Stages</strong> (also referred to as "Stages Card Game"). It explains what data the app stores on your device, what it shares with other players, and what is handled by Google if you use the optional Google Play Games sign-in. Stages shows no advertising.</p>
+    <p>The developer of Stages does not run its own servers and does not receive or store your personal data. The third parties named below process some data on their own systems under their own privacy policies.</p>
 
-    <h2>2. Device-Local Player Profiles</h2>
+    <h2>2. Your Player Profile</h2>
     <ul>
-      <li><strong>No Stages online account:</strong> Stages does not offer email registration, password login, cloud profiles, or a hosted account database.</li>
-      <li><strong>Local profile data:</strong> Your display name, avatar, friend code, game statistics, and preferences are stored in the app data on your device.</li>
+      <li><strong>No Stages account:</strong> Stages has no email registration, password login, or Stages account database.</li>
+      <li><strong>Stored on your device:</strong> Your display name, avatar, friend code, game statistics, and settings are stored in the app data on your device.</li>
       <li><strong>Shared with players in your room:</strong> When you host or join a "With Friends" room, your display name, avatar, and friend code are sent to the other players in that room so they can see who is playing. They are not sent to the developer.</li>
-      <li><strong>Manual profile transfer:</strong> A transfer code can contain your local profile, statistics, and friends. The code has a corruption check but is not encrypted, so treat it as private.</li>
-      <li><strong>No personal tracking:</strong> We do not collect GPS location, contacts, device IMEI, or browsing activity.</li>
+      <li><strong>Not collected:</strong> Stages does not access your precise (GPS) location, contacts, photos, or camera. It uses the microphone only for the optional voice chat described in section 6, and only after you turn it on.</li>
     </ul>
 
-    <h2>3. Real-Time Peer-to-Peer Multiplayer Networking</h2>
-    <p>"With Friends" private rooms use encrypted WebRTC peer-to-peer data channels strictly for card game state synchronization. There are no public tables or matchmaking with strangers: players can only join a room by entering its 4-letter code. Stages does not use the microphone or camera and does not record or stream audio.</p>
-    <p>To connect devices, Stages uses third-party networking services: the public PeerJS signaling server (0.peerjs.com) and STUN servers operated by Google (stun.l.google.com) and Cloudflare (stun.cloudflare.com). These services receive your device's IP address and temporary connection identifiers while a room is open. They do not receive your cards, statistics, or friends list.</p>
+    <h2>3. No Advertising</h2>
+    <p>Stages shows <strong>no ads</strong>. It contains no advertising SDK, does not use your device's advertising ID, and does not send any data to ad networks.</p>
+
+    <h2>4. Google Play Games Sign-In (Optional)</h2>
+    <p>When Google Play Games sign-in is available, it appears in <strong>Settings &rsaquo; Account</strong>. Signing in is optional; every part of the game works without it.</p>
+    <ul>
+      <li>When you sign in, Google shares your <strong>Play Games display name</strong> and <strong>player ID</strong> with Stages. Stages stores them only on your device and uses your Play Games name as your display name if you haven't chosen one.</li>
+      <li>When sign-in is available, the Google Play Games services library in Stages connects to Google Play services on your device when the app starts, so it can sign you in automatically if you signed in before. When it is not available, Stages does not contact Google Play Games.</li>
+      <li>Your Google Play Games profile is managed by Google under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. To sign out or delete your Play Games profile, use the Google Play Games app or your Google Account settings.</li>
+    </ul>
+
+    <h2>5. Real-Time Peer-to-Peer Multiplayer Networking</h2>
+    <p>"With Friends" private rooms use encrypted WebRTC peer-to-peer connections to keep the card game in sync and, if you choose, for voice chat (section 6). There are no public tables or matchmaking with strangers: players can only join a room by entering its 4-letter code.</p>
+    <p>To connect devices, Stages uses third-party networking services: the public PeerJS signaling server (0.peerjs.com) and STUN servers operated by Google (stun.l.google.com) and Cloudflare (stun.cloudflare.com). These services receive your device's IP address and temporary connection identifiers while a room is open. They do not receive your cards, statistics, or voice.</p>
+
+    <h2>6. Voice Chat in Friend Games (Optional)</h2>
+    <p>During a "With Friends" game you can talk with the other players in your room. Voice chat is off until you tap the <strong>Voice</strong> button.</p>
+    <ul>
+      <li><strong>Microphone permission:</strong> The first time you turn voice chat on, Android asks whether Stages may use your microphone. You can say no and keep playing without voice, and you can withdraw the permission at any time in your phone's <strong>Settings &rsaquo; Apps &rsaquo; Stages &rsaquo; Permissions</strong>.</li>
+      <li><strong>Where your voice goes:</strong> Your voice is streamed live, directly from your device to the devices of the other players in your room who have also turned voice chat on, over encrypted WebRTC (DTLS-SRTP). It does not pass through any server run by the developer, and the signaling and STUN services in section 5 do not receive it.</li>
+      <li><strong>Not recorded or stored:</strong> Stages does not record, save, upload, transcribe, or analyze what you say. The only processing is on your device: echo and noise reduction, and a volume check that lights up the "talking" indicator.</li>
+      <li><strong>Who knows you are in voice:</strong> Other players in the room can see whether you are in voice chat and whether your microphone is muted.</li>
+      <li><strong>Your controls:</strong> You can mute your microphone, mute everyone, mute a single player for yourself, or turn voice chat off at any time. Your microphone is switched off while Stages is in the background, and voice chat ends when you leave the game.</li>
+      <li><strong>Other players:</strong> Stages cannot stop another player from recording their own device. Only talk with people you trust, and do not share personal information over voice chat.</li>
+    </ul>
 
     <div id="delete-account" class="callout">
-      <h3 style="color: #fef08a;">4. Clearing Local Profile Data</h3>
-      <p>Open <strong>Privacy</strong> from the main menu and tap <strong>Clear Local Data</strong> to remove your profile and statistics from this device.</p>
-      <p>Because Stages has no hosted account database, there is no server-side Stages account to delete and the developer cannot remotely recover or erase data stored only on your device.</p>
+      <h3 style="color: #fef08a;">7. Deleting Your Data</h3>
+      <p><strong>On your device:</strong> Open <strong>Privacy</strong> from the main menu and tap <strong>Clear Local Data</strong> to remove your profile, statistics, and the stored copy of your Play Games name from this device. Uninstalling Stages also removes all of its data from your device.</p>
+      <p><strong>Held by Google:</strong> If you signed in with Google Play Games, your Play Games profile can be deleted in the Google Play Games app or your Google Account (section 4).</p>
+      <p>Because Stages has no account database of its own, there is no Stages account on a server to delete. Voice chat is never stored, so there is no voice data to delete.</p>
     </div>
 
-    <h2>5. Security & Networking</h2>
-    <p>Multiplayer game state synchronizes using encrypted WebRTC data connections. A signaling service helps peers connect but is not a Stages account or profile service.</p>
+    <h2>8. Security</h2>
+    <p>Multiplayer game state and voice chat are exchanged over encrypted WebRTC connections. Connections to Google Play Games use encrypted HTTPS.</p>
 
-    <h2>6. Children's Privacy</h2>
-    <p>Stages complies with COPPA and Google Play Families policies. We do not knowingly collect personal information from children under 13.</p>
+    <h2>9. Age Requirement</h2>
+    <p>Stages is intended for players aged <strong>13 and over</strong> and is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has used Stages, contact us and we will help you remove their data from the device.</p>
 
-    <h2>7. Developer Contact</h2>
+    <h2>10. Changes to This Policy</h2>
+    <p>If we change how Stages handles data, we will update this policy and the "Last updated" date above before the change takes effect in the app.</p>
+
+    <h2>11. Developer Contact</h2>
     <p>For any questions or data inquiries regarding Stages, please contact us at: <a href="mailto:thefinancialvoyager@gmail.com">thefinancialvoyager@gmail.com</a>.</p>
 
     <div class="footer">
