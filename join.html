@@ -76,9 +76,9 @@
   <script>
     (function () {
       var PLAY = 'https://play.google.com/store/apps/details?id=com.stages.app';
-      // Room codes are 4 characters without 0, O, 1 or I (same rule as the app).
+      // Room codes are 4 characters: letters without O or I, and the digits 0-9 (same rule as the app).
       var raw = (new URLSearchParams(location.search).get('room') || '').toUpperCase();
-      var valid = /^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{4}$/.test(raw);
+      var valid = /^[ABCDEFGHJKLMNPQRSTUVWXYZ0123456789]{4}$/.test(raw);
       var card = document.getElementById('card');
       var open = document.getElementById('open');
       if (!valid) {
