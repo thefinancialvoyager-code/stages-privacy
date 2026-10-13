@@ -36,11 +36,12 @@
     }
     h1 { color: #5a3013; font-size: 26px; line-height: 1.2; margin-bottom: 6px; }
     p { font-size: 16px; line-height: 1.5; margin: 10px 0; }
-    .code { display: flex; gap: 10px; justify-content: center; margin: 18px 0 8px; }
+    .code { display: flex; gap: 8px; justify-content: center; margin: 18px 0 8px; }
+    /* Six tiles shrink to fit a narrow phone. */
     .code span {
-      width: 58px; height: 70px; border-radius: 14px;
+      flex: 0 1 58px; min-width: 0; height: 70px; border-radius: 14px;
       display: inline-flex; align-items: center; justify-content: center;
-      font-size: 38px; font-weight: 700; color: #5a3013;
+      font-size: clamp(26px, 8vw, 38px); font-weight: 700; color: #5a3013;
       background: #fff; box-shadow: inset 0 -4px 0 #ead3a6, 0 4px 0 #a06a3a;
     }
     .open {
@@ -76,15 +77,16 @@
   <script>
     (function () {
       var PLAY = 'https://play.google.com/store/apps/details?id=com.stages.app';
-      // Room codes are 4 characters: letters without O or I, and the digits 0-9 (same rule as the app).
+      // Room codes: letters without O or I, and the digits 0-9 (same rule as the app). Stages 2.13
+      // (v25) uses 6 characters; 4 is still accepted for phones on older versions.
       var raw = (new URLSearchParams(location.search).get('room') || '').toUpperCase();
-      var valid = /^[ABCDEFGHJKLMNPQRSTUVWXYZ0123456789]{4}$/.test(raw);
+      var valid = /^([ABCDEFGHJKLMNPQRSTUVWXYZ0123456789]{4}|[ABCDEFGHJKLMNPQRSTUVWXYZ0123456789]{6})$/.test(raw);
       var card = document.getElementById('card');
       var open = document.getElementById('open');
       if (!valid) {
         card.className = 'card bad';
         document.getElementById('title').textContent = 'This join link is not valid';
-        document.getElementById('lead').textContent = 'Ask your friend to show the QR code again, or type their 4-letter room code in Stages under With Friends.';
+        document.getElementById('lead').textContent = 'Ask your friend to show the QR code again, or type their room code in Stages under With Friends.';
         open.style.display = 'none';
         return;
       }
